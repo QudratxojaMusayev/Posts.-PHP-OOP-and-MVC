@@ -19,6 +19,21 @@
 
             // Instantiate controller class
             $this->curretController = new $this->currentController; // $pages = new Pages;
+
+            // Check for second part of url
+            if (isset($url[1])) {
+                // Check to see if method exists
+                if (method_exists($this->currentController, $url[1])) {
+                    $this->currentMethod = $url[1];
+                    unset($url[1]);
+                }
+            }
+
+            // Get parameters
+            $this->params = $url ? array_values($url) : [];
+            
+            // Call a callback with array of params
+            call_user_func([$this->currentController, $this->currentMethod], $this->params);
         }
 
         public function getURL()

@@ -3,7 +3,17 @@
     class Pages  
     {
         public function __construct() {
-            echo "Pages initiated";
+            
+        }
+
+        public function index()
+        {
+            
+        }
+
+        public function about($id)
+        {
+            print_r($id);
         }
     }
     
