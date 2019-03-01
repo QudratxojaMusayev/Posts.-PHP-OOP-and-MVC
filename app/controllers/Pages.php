@@ -8,12 +8,19 @@
 
         public function index()
         {
-            $this->view("index");
+            // echo "Hello from index";
+            $init = new Pages();
+            $data = [
+                "title" => "Welcome"
+            ];
+
+            $init->view("pages/index", $data);
         }
 
-        public function about($id)
+        public function about()
         {
-            
+            $init = new Pages();
+            $init->view("pages/about");
         }
     }
     
