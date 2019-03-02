@@ -2,16 +2,18 @@
 
     class Pages extends Controller
     {
+        private $postModel;
+
         public function __construct() {
-            
+        
         }
 
         public function index()
         {
-            // echo "Hello from index";
             $init = new Pages();
+        
             $data = [
-                "title" => "Welcome"
+                "title" => "Welcome",
             ];
 
             $init->view("pages/index", $data);
