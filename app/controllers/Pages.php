@@ -20,7 +20,11 @@
         public function about()
         {
             $init = new Pages();
-            $init->view("pages/about");
+            $data = [
+                "title" => "About Us"
+            ];
+
+            $init->view("pages/about", $data);
         }
     }
     
