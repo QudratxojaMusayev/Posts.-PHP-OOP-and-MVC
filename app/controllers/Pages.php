@@ -14,6 +14,7 @@
         
             $data = [
                 "title" => "Welcome",
+                "description" => "Simple social network to share your posts"
             ];
 
             $init->view("pages/index", $data);
@@ -23,7 +24,8 @@
         {
             $init = new Pages();
             $data = [
-                "title" => "About Us"
+                "title" => "About Us",
+                "description" => "App to share posts with other people"
             ];
 
             $init->view("pages/about", $data);
