@@ -18,11 +18,11 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URLROOT ?>/users/register">Sign Up
+                    <a class="nav-link" href="<?php echo URLROOT ?>/users/register"><i class="fas fa-user-plus"></i> Sign Up
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URLROOT ?>/users/login">Sign In</a>
+                    <a class="nav-link" href="<?php echo URLROOT ?>/users/login"><i class="fas fa-user"></i> Sign In</a>
                 </li>
             </ul>
         </div>
