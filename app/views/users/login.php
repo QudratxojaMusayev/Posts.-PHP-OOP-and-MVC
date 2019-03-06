@@ -3,6 +3,7 @@
 <div class="row">
     <div class="col-md-6 mx-auto">
         <div class="modal-dialog" role="document">
+            <?php flash("register_success"); ?>
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <h4 class="modal-title w-100 font-weight-bold">Sign In</h4>
