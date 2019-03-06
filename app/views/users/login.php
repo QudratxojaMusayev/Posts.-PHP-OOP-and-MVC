@@ -26,7 +26,7 @@
                     </div>
                     <div class="container">
                         <div class="row d-flex justify-content-center">
-                            <input type="submit" class="btn blue" value="Sign Up">
+                            <input type="submit" class="btn blue" value="Sign In">
                         </div>
                         <div class="row d-flex justify-content-center mt-3">
                             <p>Not have an account yet? <a href="<?php echo URLROOT; ?>/users/register">Sign Up</a></p>

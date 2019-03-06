@@ -111,10 +111,26 @@
                     $data['password_err'] = "Please enter password";
                 }
 
+                if($init->userModel->findUserByEmail($data["email"])) {
+                    // User found
+                } else {
+                    // User not found
+                    $data["email_err"] = "No user found";
+                }
+
                 // If no errors
                 if (empty($data['email_err']) && empty($data['password_err'])) {
                     // Validated
-                    die("SUCCESS");                
+                    $loggedInUser = $init->userModel->login($data["email"], $data["password"]);
+                    
+                    if ($loggedInUser) {
+                        // Create session
+                        $init->createUserSession($loggedInUser);
+                    } else {
+                        $data["password_err"] = "Password incorrect";
+
+                        $init->view("users/login", $data);
+                    }
                 } else {
                     $init->view("users/login", $data);
                 }
@@ -128,6 +144,32 @@
                 ];
 
                 $init->view("users/login", $data);
+            }
+        }
+
+        public function createUserSession($user)
+        {   
+            $_SESSION["user_id"] = $user->id;
+            $_SESSION["user_email"] = $user->email;
+            $_SESSION["user_name"] = $user->name;
+            redirect("/pages/index");
+        }
+
+        public function logout()
+        {
+            unset($_SESSION["user_id"]);
+            unset($_SESSION["user_email"]);
+            unset($_SESSION["user_name"]);
+            session_destroy();
+            redirect("/users/login");
+        }
+
+        public function isLoggedIn()
+        {
+            if (isset($_SESSION["user_id"])) {
+                return true;
+            } else {
+                return false;
             }
         }
     }

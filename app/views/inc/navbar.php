@@ -17,6 +17,11 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
+                <?php if(isset($_SESSION["user_id"])) : ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo URLROOT ?>/users/logout">Log out</a>
+                </li>
+                <?php else : ?>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo URLROOT ?>/users/register"><i class="fas fa-user-plus"></i> Sign Up
                     </a>
@@ -24,6 +29,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo URLROOT ?>/users/login"><i class="fas fa-user"></i> Sign In</a>
                 </li>
+                <?php endif; ?>
             </ul>
         </div>
     </div>
