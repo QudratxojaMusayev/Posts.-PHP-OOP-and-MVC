@@ -55,7 +55,17 @@
                 if (empty($data['name_err']) && empty($data['email_err']) 
                 && empty($data['password_err']) && empty($data['confirm_password_err'])) {
                     // Validated
-                    die("SUCCESS");                
+                    
+                    // Hash password
+                    $data["password"] = password_hash($data["password"], PASSWORD_DEFAULT);
+
+                    // Register user
+                    if ($init->userModel->register($data)) {
+                        redirect("/users/login");
+                    } else {
+                        die("Something went wrong");
+                    }
+                    
                 } else {
                     $init->view("users/register", $data);
                 }
