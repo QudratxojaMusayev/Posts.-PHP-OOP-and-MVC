@@ -9,4 +9,15 @@
             </a>
         </div>
     </div>
+    <?php foreach ($data["posts"] as $post) : ?>
+        <div class="card card-body mb-3">
+            <h4 class="card-title py-0 mb-0"><?php echo $post->title; ?>
+            <span id="author" class="float-right text-muted blockquote m-0">by <?php echo $post->name; ?></span>
+            </h4>
+            <p class="text-muted m-0">Created on <?php echo $post->postCreated; ?></p>
+            <p class="card-text mt-3"><?php echo $post->body; ?></p>
+            <a id="moreButton" href="<?php URLROOT; ?>/posts/show/<?php echo $post->postID; ?>" class="btn btn-outline-primary">
+            More</a>
+        </div>
+    <?php endforeach; ?>
 <?php require_once APPROOT ."/views/inc/footer.php" ?>
