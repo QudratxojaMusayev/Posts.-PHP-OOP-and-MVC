@@ -10,6 +10,10 @@
 
         public function index()
         {
+            if (isLoggedIn()) {
+                redirect("/posts");
+            }
+
             $init = new Pages();
         
             $data = [

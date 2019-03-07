@@ -23,6 +23,18 @@
             
             $init->view("posts/index", $data);
         }
+
+        public function add()
+        {
+            $init = new Posts();
+            
+            $data = [
+                "title" => "",
+                "body" => ""
+            ];
+            
+            $init->view("posts/add", $data);
+        }
     }
     
 ?>

@@ -4,7 +4,7 @@
             <h1>Posts</h1>
         </div>
         <div class="col-md-6 d-flex justify-content-center justify-content-md-end">
-            <a href="<?php URLROOT;?>/posts/add" class="btn blue">
+            <a href="<?php echo URLROOT;?>/posts/add" class="btn blue">
             <i class="fas fa-pencil-alt"></i> Add Post
             </a>
         </div>
@@ -16,7 +16,7 @@
             </h4>
             <p class="text-muted m-0">Created on <?php echo $post->postCreated; ?></p>
             <p class="card-text mt-3"><?php echo $post->body; ?></p>
-            <a id="moreButton" href="<?php URLROOT; ?>/posts/show/<?php echo $post->postID; ?>" class="btn btn-outline-primary">
+            <a id="moreButton" href="<?php echo URLROOT; ?>/posts/show/<?php echo $post->postID; ?>" class="btn btn-outline-primary">
             More</a>
         </div>
     <?php endforeach; ?>
