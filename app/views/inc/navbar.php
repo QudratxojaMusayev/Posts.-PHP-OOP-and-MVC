@@ -1,7 +1,7 @@
 <!--Navbar -->
 <nav class="mb-3 navbar navbar-expand-md navbar-dark  blue lighten-1">
     <div class="container-fluid">
-        <a class="navbar-brand" href="<?php echo URLROOT?>"><?php echo SITENAME?></a>
+        <a class="navbar-brand" href="<?php echo URLROOT?>"><i class="fab fa-accusoft"></i> <?php echo SITENAME?></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
             aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
