@@ -12,10 +12,11 @@
                     <label for="title">Title</label>
                     <span class="invalid-feedback"><?php echo $data["title_err"]; ?></span>                        
                 </div>
-                <div class="md-form <?php echo (!empty($data["title_err"])) ? 'is-invalid': ''; ?>">
+                <div class="md-form">
                     <i class="fas fa-pencil-alt prefix grey-text"></i>
-                    <textarea id="form107" name="body" class="md-textarea form-control" rows="7"><?php echo $data["body"]; ?></textarea>
+                    <textarea id="form107" name="body" class="md-textarea form-control <?php echo (!empty($data["body_err"])) ? 'is-invalid': ''; ?>" rows="7"><?php echo $data["body"]; ?></textarea>
                     <label for="form107">Write your post here...</label>
+                    <span class="invalid-feedback"><?php echo $data["body_err"]; ?></span>   
                 </div>
             </div>
             <div class="container">
