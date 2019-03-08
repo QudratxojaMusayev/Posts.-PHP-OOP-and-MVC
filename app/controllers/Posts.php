@@ -147,6 +147,30 @@
             ];
             
             $init->view("posts/show", $data);
-        }    
+        }
+        
+        public function delete($id)
+        {
+            $init = new Posts();
+
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                // Get post from Model
+                $post = $init->postModel->getPostByID($id);
+                
+                // Check the owner
+                if ($post->user_id != $_SESSION["user_id"]) {
+                    redirect("/posts");
+                }
+
+                if ($init->postModel->deletePost($id)) {
+                    flash("post_message", "Post removed");
+                    redirect("/posts");
+                } else {
+                    die("Something went wrong");
+                }
+            } else {         
+                redirect("/posts");
+            }
+        }
     }
 ?>

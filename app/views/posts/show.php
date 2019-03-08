@@ -9,9 +9,40 @@
     <hr>
     <div class="row justify-content-between">
     <a href="<?php echo URLROOT; ?>/posts/edit/<?php echo $data["post"]->id; ?>" class="btn btn-success ml-3">Edit</a>
-    <form action="<?php echo URLROOT; ?>/posts/delete/<?php echo $data["post"]->id; ?>" method="post">
-        <input type="submit" value="Delete" class="btn btn-danger mr-3">
-    </form>
+    
+    <!-- Button trigger modal-->
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalConfirmDelete">Delete</button>
     </div>
+    
+    <!--Modal: modalConfirmDelete-->
+    <div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+            <!--Content-->
+            <div class="modal-content text-center">
+                <!--Header-->
+                <div class="modal-header d-flex justify-content-center">
+                    <p class="heading">Are you sure?</p>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+
+                    <i class="fas fa-times fa-4x animated rotateIn"></i>
+
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer flex-center">
+                <form action="<?php echo URLROOT; ?>/posts/delete/<?php echo $data["post"]->id; ?>" method="post">
+                    <input type="submit" value="Yes" class="btn btn-outline-danger">
+                </form>
+                    <a type="button" class="btn btn-danger" data-dismiss="modal">No</a>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!--Modal: modalConfirmDelete-->
 <?php endif; ?>
 <?php require_once APPROOT ."/views/inc/footer.php" ?>
