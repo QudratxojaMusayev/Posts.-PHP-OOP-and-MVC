@@ -16,9 +16,9 @@
             <span id="author" class="float-right text-muted blockquote m-0">by <?php echo $post->name; ?></span>
             </h4>
             <p class="text-muted m-0">Created on <?php echo $post->postCreated; ?></p>
-            <p class="card-text mt-3"><?php echo $post->body; ?></p>
+            <p class="card-text mt-3"><?php echo substr($post->body, 0, 300); ?></p>
             <a id="moreButton" href="<?php echo URLROOT; ?>/posts/show/<?php echo $post->postID; ?>" class="btn btn-outline-primary">
-            More</a>
+            More...</a>
         </div>
     <?php endforeach; ?>
 <?php require_once APPROOT ."/views/inc/footer.php" ?>

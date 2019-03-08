@@ -40,6 +40,7 @@
                 return false;
             }
         }
+
         // Find user by e-mail
         public function findUserByEmail($email)
         {
@@ -55,6 +56,17 @@
                 return false;
             }
             
+        }
+
+        // Find user by e-mail
+        public function getUserByID($userID)
+        {
+            $this->db->query("SELECT * FROM users WHERE id = :userID");
+            $this->db->bind(":userID", $userID);
+
+            $row = $this->db->single();
+
+            return $row;
         }
     }    
 ?>
